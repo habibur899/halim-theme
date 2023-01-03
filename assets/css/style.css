@@ -1558,10 +1558,12 @@ a.box-btn:hover i.fa {
 
 .single-footer ul li:before {
 	content: "\f101";
-	font-family: fontAwesome;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	position: absolute;
 	left: 0;
 	top: 5px;
+
 }
 
 .single-footer ul li a {

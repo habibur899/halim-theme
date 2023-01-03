@@ -4,58 +4,68 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer footer-logo">
-                    <h3>halim</h3>
-                    <p>Lorem ipsum dolor adipisicing amet, consectetur sit elit. Aspernatur incidihil quo officia.</p>
+					<?php
+					if ( is_active_sidebar( 'footer-1' ) ) {
+						dynamic_sidebar( 'footer-1' );
+					}
+					?>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
                 <div class="single-footer">
-                    <h4>quick links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
+					<?php
+					if ( is_active_sidebar( 'footer-2' ) ) {
+						dynamic_sidebar( 'footer-2' );
+					}
+					?>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-footer">
-                    <h4>latest post</h4>
-                    <ul>
-                        <li><a href="#">lorem ipsum dummy text</a></li>
-                        <li><a href="#">lorem ipsum dummy text</a></li>
-                        <li><a href="#">lorem ipsum dummy text</a></li>
-                        <li><a href="#">lorem ipsum dummy text</a></li>
-                        <li><a href="#">lorem ipsum dummy text</a></li>
-                    </ul>
+
+					<?php
+					if ( is_active_sidebar( 'footer-3' ) ) {
+						dynamic_sidebar( 'footer-3' );
+					}
+					?>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer contact-box">
-                    <h4>Contact Us</h4>
+					<?php
+					$footer_contact_title = get_field( 'footer_contact_title', 'option' );
+					?>
+                    <h4><?php echo esc_html__( $footer_contact_title, 'halim' ) ?></h4>
                     <ul>
-                        <li><i class="fa fa-map-marker"></i> 245 Street, Sydney, Australia</li>
-                        <li><i class="fa fa-mobile"></i> +23 0034 5567 341</li>
-                        <li><i class="fa fa-phone"></i> +23 0034 5567 341</li>
-                        <li><i class="fa fa-envelope"></i> info@demo.com</li>
-                        <li><i class="fa fa-globe"></i> www.demo.com</li>
+						<?php
+						$all_contacts = get_field( 'footer_contact', 'option' );
+						foreach ( $all_contacts as $all_contact ) {
+							?>
+                            <li>
+                                <i class="fa <?php echo esc_attr( $all_contact['icon'] ) ?>"></i><?php echo esc_html__( $all_contact['label'], 'halim' ) ?>
+                            </li>
+							<?php
+						}
+						?>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row copyright">
             <div class="col-md-6">
-                <p>&copy; All Rights Reserved 2020</p>
+                <p><?php echo esc_html__( get_field( 'copyright', 'option' ), 'halim' ) ?></p>
             </div>
             <div class="col-md-6 text-right">
                 <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					<?php
+					$social_icons = get_field( 'social', 'option' );
+					foreach ( $social_icons as $social_icon ) {
+						?>
+                        <li><a href="<?php echo esc_url( $social_icon['link'] ) ?>"><i
+                                        class="<?php echo esc_attr( $social_icon['icon'] ); ?>"></i></a></li>
+						<?php
+					}
+					?>
                 </ul>
             </div>
         </div>

@@ -121,6 +121,43 @@ function halim_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	//Footer 1
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer One', 'halim' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add footer one widgets here.', 'halim' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	//Footer 2
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Two', 'halim' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add footer two widgets here.', 'halim' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	//Footer 3
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Three', 'halim' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Add footer three widgets here.', 'halim' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'halim_widgets_init' );
@@ -133,7 +170,8 @@ add_action( 'widgets_init', 'halim_widgets_init' );
 function halim_assets_load() {
 	wp_enqueue_style( 'halim-poppins-font', '//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'halim-bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), _S_VERSION, 'all' );
-	wp_enqueue_style( 'halim-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), _S_VERSION, 'all' );
+	wp_enqueue_style( 'halim-font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), _S_VERSION, 'all' );
+	wp_enqueue_style( 'halim-font-awesome-min', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'halim-magnific-popup', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'halim-owl-carousel-css', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'halim-assets-style-css', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION, 'all' );

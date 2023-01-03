@@ -12,18 +12,30 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="header-left">
-                    <a href=""><i class="fa fa-envelope"></i> info@halim.com</a>
-                    <a href=""><i class="fa fa-phone"></i> 23457689</a>
+					<?php if ( get_field( 'email', 'option' ) ) { ?>
+                        <a href="mailto:<?php the_field( 'email', 'option' ); ?>"><i
+                                    class="fa fa-envelope"></i> <?php the_field( 'email', 'option' ); ?></a>
+					<?php } ?>
+					<?php if ( get_field( 'phone', 'option' ) ) { ?>
+                        <a href="tel:<?php the_field( 'phone', 'option' ); ?>"><i
+                                    class="fa fa-phone"></i> <?php the_field( 'phone', 'option' ); ?></a>
+					<?php } ?>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
                 <div class="header-social">
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-youtube"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
+					<?php
+					$social_icons = get_field( 'header_social', 'option' );
+
+					foreach ( $social_icons as $social_icon ) {
+						?>
+                        <a href="<?php echo esc_url( $social_icon['link'] ) ?>"><i
+                                    class="<?php echo esc_attr( $social_icon['icon'] ); ?>"></i></a>
+						<?php
+					}
+					?>
                 </div>
+
             </div>
         </div>
     </div>
