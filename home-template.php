@@ -18,7 +18,7 @@ get_header();
 				?>
 
                 <div class="single-slide"
-                     style="background-image:url('<?php echo get_template_directory_uri() ?>/assets/img/slider/slide-2.jpg')">
+                     style="background-image:url('<?php the_post_thumbnail_url() ?>')">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-12">
@@ -432,9 +432,14 @@ get_header();
                                 </div>
                                 <div class="pots-meta">
                                     <ul>
-                                        <li><?php echo get_the_date( 'j F Y' ) ?></li>
                                         <li>
-                                            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author() ?></a>
+											<?php echo get_the_date( 'j F Y' ) ?>
+                                        </li>
+                                        <li>
+											<?php the_category( ', ' ); ?>
+                                        </li>
+                                        <li>
+											<?php the_author_posts_link(); ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -455,29 +460,5 @@ get_header();
     </section>
     <!-- Latest News Area End -->
 
-    <!-- CTA Area Start -->
-    <section class="cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-					<?php
-					$cta_title       = get_field( 'title', 'option' );
-					$cta_sub_title   = get_field( 'sub_title', 'option' );
-					$cta_button_text = get_field( 'button_text', 'option' );
-					$cta_link        = get_field( 'link', 'option' );
-					?>
-                    <h4><?php echo esc_html__( $cta_title, 'halim' ) ?>
-
-                        <span><?php echo esc_html__( $cta_sub_title, 'halim' ) ?></span>
-                    </h4>
-                </div>
-                <div class="col-md-6 text-center">
-                    <a href="<?php echo esc_url( $cta_link ) ?>"
-                       class="box-btn"><?php echo esc_html__( $cta_button_text, 'halim' ) ?><i
-                                class="fa fa-angle-double-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
 <?php
 get_footer();

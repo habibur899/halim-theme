@@ -46,7 +46,15 @@
         <div class="row">
             <div class="col-xl-12">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="<?php echo site_url() ?>">halim</a>
+					<?php
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$logo           = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+					if ( has_custom_logo() ) {
+						echo '<a href="' . site_url() . '"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
+					} else {
+						echo '<a href="' . site_url() . '" class="navbar-brand">' . get_bloginfo( 'name' ) . '</a>';
+					}
+					?>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

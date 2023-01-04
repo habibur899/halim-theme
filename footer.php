@@ -1,3 +1,4 @@
+<?php get_template_part('/template-parts/cta')?>
 <!-- Footer Area End -->
 <footer class="footer-area pt-50 pb-50">
     <div class="container">

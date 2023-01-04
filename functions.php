@@ -112,13 +112,13 @@ add_action( 'after_setup_theme', 'halim_theme_setup' );
 function halim_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'halim' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Blog Sidebar', 'halim' ),
+			'id'            => 'blog-sidebar',
 			'description'   => esc_html__( 'Add widgets here.', 'halim' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget %2$s single-sidebar">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 
@@ -195,5 +195,19 @@ function halim_assets_load() {
 
 add_action( 'wp_enqueue_scripts', 'halim_assets_load' );
 
-//Template Parts Require
+//Acf Json
+add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
 
+function my_acf_json_save_point( $path ) {
+
+	// update path
+	$path = get_template_directory() . '/acf-json';
+
+
+	// return
+	return $path;
+
+}
+
+
+require_once get_template_directory() . "/inc/tgm.php";

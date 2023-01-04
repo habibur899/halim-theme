@@ -5,13 +5,13 @@
                 <div class="col-xl-12">
                     <div class="breadcumb">
 
-                        <h4><?php echo esc_html__( single_post_title(), 'halim' ) ?></h4>
+                        <h4><?php the_archive_title(); ?></h4>
                         <ul>
                             <li>
                                 <a href="<?php echo esc_url( site_url() ) ?>"></a><?php echo esc_html__( 'Home', 'halim' ) ?>
                             </li>
                             /
-                            <li><?php echo esc_html__( single_post_title(), 'halim' ) ?></li>
+                            <li><?php the_archive_title(); ?></li>
                         </ul>
                     </div>
                 </div>
