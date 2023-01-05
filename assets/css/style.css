@@ -1805,3 +1805,20 @@ a.box-btn:hover i.fa {
     border: 1px solid #ddd;
     padding: 3px;
 }
+
+/*Last Added by habibur*/
+.tags li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.tags li a {
+    background: #635CDB;
+    color: #ffffff;
+    padding: 2px 8px;
+}
+
+.tags li a:hover {
+    background: #ffffff;
+    color: #635CDB;
+}

@@ -24,15 +24,16 @@ get_header();
                             <div class="col-xl-12">
                                 <div class="slide-table">
                                     <div class="slide-tablecell">
-                                        <h4><?php the_field( 'subtitle' ); ?></h4>
-                                        <h2><?php the_title() ?></h2>
-                                        <p><?php the_content(); ?></p>
+                                        <h4><?php esc_html( the_field( 'subtitle' ) ) ?></h4>
+                                        <h2><?php esc_html( the_title() ) ?></h2>
+                                        <p><?php the_content() ?></p>
 
 										<?php
 										$link = get_field( 'button_url' );
 										if ( $link ): ?>
                                             <a href="<?php echo esc_url( $link ); ?>"
-                                               class="box-btn"><?php the_field( 'button_text' ); ?><i
+                                               class="box-btn"><?php esc_html( the_field( 'button_text' ) ) ?>
+                                                <i
                                                         class="fa fa-angle-double-right"></i></a>
 										<?php endif; ?>
                                     </div>
@@ -59,11 +60,11 @@ get_header();
 
 					?>
                     <h3>
-                        <span><?php echo esc_html__( $about_title['heading'], 'halim' ) ?></span><?php echo esc_html__( $about_title['sub_heading'], 'halim' ) ?>
+                        <span><?php echo esc_html( $about_title['heading'] ) ?></span><?php echo esc_html( $about_title['sub_heading'] ) ?>
                     </h3>
                 </div>
                 <div class="col-md-6">
-                    <p><?php echo esc_html__( $about_title['description'], 'halim' ) ?></p>
+                    <p><?php echo esc_html( $about_title['description'] ) ?></p>
                 </div>
             </div>
             <div class="row">
@@ -88,9 +89,9 @@ get_header();
 					foreach ( $about_features as $about_feature ) {
 						?>
                         <div class="single_about">
-                            <i class="fa <?php echo esc_html__( $about_feature['icon'] ); ?>"></i>
-                            <h4><?php echo esc_html__( $about_feature['title'] ); ?></h4>
-                            <p><?php echo esc_html__( $about_feature['description'] ); ?></p>
+                            <i class="fa <?php echo esc_attr( $about_feature['icon'] ); ?>"></i>
+                            <h4><?php echo esc_html__( $about_feature['title'], 'halim'); ?></h4>
+                            <p><?php echo esc_html__( $about_feature['description'],'halim' ); ?></p>
                         </div>
 					<?php } ?>
 
@@ -109,7 +110,7 @@ get_header();
 							<?php
 							$faq_title = get_field( 'faq_title', 'option' );
 							?>
-                            <h4><?php echo esc_html__( $faq_title, 'halim' ) ?></h4>
+                            <h4><?php echo esc_html( $faq_title ) ?></h4>
                         </div>
                         <div class="accordion" id="accordionExample">
 
@@ -127,7 +128,7 @@ get_header();
                                                     data-target="#collapse<?php echo esc_attr( $i ) ?>"
                                                     aria-expanded="true"
                                                     aria-controls="collapse<?php echo esc_attr( $i ) ?>">
-												<?php echo esc_html__( $faq['title'], 'halim' ) ?>
+												<?php echo esc_html( $faq['title'] ) ?>
                                             </button>
                                         </h5>
                                     </div>
@@ -136,7 +137,7 @@ get_header();
 										     echo esc_attr( 'show' );
 									     } ?>" aria-labelledby="heading<?php echo esc_attr( $i ) ?>"
                                          data-parent="#accordionExample">
-                                        <div class="card-body"><?php echo esc_html__( $faq['description'], 'halim' ) ?></div>
+                                        <div class="card-body"><?php echo esc_html( $faq['description'] ) ?></div>
                                     </div>
                                 </div>
 							<?php } ?>
@@ -150,7 +151,7 @@ get_header();
 							<?php
 							$skill_title = get_field( 'skill_title', 'option' );
 							?>
-                            <h4><?php echo esc_html__( $skill_title, 'halim' ) ?></h4>
+                            <h4><?php echo esc_html( $skill_title ) ?></h4>
                         </div>
 
 						<?php
@@ -158,12 +159,12 @@ get_header();
 						foreach ( $single_skills as $single_skill ) {
 							?>
                             <div class="single-skill">
-                                <h4><?php echo esc_html__( $single_skill['title'], 'halim' ) ?></h4>
+                                <h4><?php echo esc_html( $single_skill['title'] ) ?></h4>
                                 <div class="progress-bar" role="progressbar"
-                                     style="width: <?php echo esc_html__( $single_skill['percentage'], 'halim' ) ?>%;"
+                                     style="width: <?php echo esc_attr( $single_skill['percentage'] ) ?>%;"
                                      aria-valuenow="85"
                                      aria-valuemin="0"
-                                     aria-valuemax="100"><?php echo esc_html__( $single_skill['percentage'], 'halim' ) ?>
+                                     aria-valuemax="100"><?php echo esc_html( $single_skill['percentage'] ) ?>
                                     %
                                 </div>
                             </div>
@@ -185,11 +186,11 @@ get_header();
 
 					?>
                     <h3>
-                        <span><?php echo esc_html__( $service_title['heading'], 'halim' ) ?></span><?php echo esc_html__( $service_title['sub_heading'], 'halim' ) ?>
+                        <span><?php echo esc_html( $service_title['heading'] ) ?></span><?php echo esc_html( $service_title['sub_heading'] ) ?>
                     </h3>
                 </div>
                 <div class="col-md-6">
-                    <p><?php echo esc_html__( $service_title['description'], 'halim' ) ?></p>
+                    <p><?php echo esc_html( $service_title['description'] ) ?></p>
                 </div>
             </div>
 
@@ -210,7 +211,7 @@ get_header();
                         <!-- Single Service -->
                         <div class="single-service">
                             <i class="<?php the_field( 'icon' ); ?>"></i>
-                            <h4><?php the_title() ?></h4>
+                            <h4><?php esc_html( the_title() ) ?></h4>
                             <p><?php the_content(); ?></p>
                         </div>
                     </div>
@@ -241,7 +242,8 @@ get_header();
                     <div class="col-md-3">
                         <div class="single-counter">
                             <h4><i class="<?php the_field( 'icon' ); ?>"></i><span
-                                        class="counter"><?php the_field( 'number' ); ?></span><?php the_title() ?></h4>
+                                        class="counter"><?php esc_html( the_field( 'number' ) ); ?></span><?php esc_html( the_title() ) ?>
+                            </h4>
                         </div>
                     </div>
 
@@ -264,11 +266,11 @@ get_header();
 
 					?>
                     <h3>
-                        <span><?php echo esc_html__( $team_title['heading'], 'halim' ) ?></span><?php echo esc_html__( $team_title['sub_heading'], 'halim' ) ?>
+                        <span><?php echo esc_html( $team_title['heading'] ) ?></span><?php echo esc_html( $team_title['sub_heading'] ) ?>
                     </h3>
                 </div>
                 <div class="col-md-6">
-                    <p><?php echo esc_html__( $team_title['description'], 'halim' ) ?></p>
+                    <p><?php echo esc_html( $team_title['description'] ) ?></p>
                 </div>
             </div>
             <div class="row">
@@ -288,7 +290,8 @@ get_header();
 							<?php the_post_thumbnail(); ?>
                             <div class="team-hover">
                                 <div class="team-content">
-                                    <h4><?php the_field( 'name' ); ?><span><?php the_field( 'designation' ); ?></span>
+                                    <h4><?php esc_html( the_field( 'name' ) ) ?>
+                                        <span><?php esc_html( the_field( 'designation' ) ) ?></span>
                                     </h4>
                                     <ul>
 										<?php
@@ -353,11 +356,11 @@ get_header();
 
 					?>
                     <h3>
-                        <span><?php echo esc_html__( $client_title['heading'], 'halim' ) ?></span><?php echo esc_html__( $client_title['sub_heading'], 'halim' ) ?>
+                        <span><?php echo esc_html( $client_title['heading'] ) ?></span><?php echo esc_html( $client_title['sub_heading'] ) ?>
                     </h3>
                 </div>
                 <div class="col-md-6">
-                    <p><?php echo esc_html__( $client_title['description'], 'halim' ) ?></p>
+                    <p><?php echo esc_html( $client_title['description'] ) ?></p>
                 </div>
             </div>
         </div>
@@ -382,7 +385,8 @@ get_header();
 									<?php the_post_thumbnail(); ?>
                                 </div>
                                 <p><?php the_content(); ?></p>
-                                <h4><?php the_title() ?><span><?php the_field( 'designation' ); ?></span></h4>
+                                <h4><?php esc_html( the_title() ) ?>
+                                    <span><?php esc_html( the_field( 'designation' ) ); ?></span></h4>
                             </div>
 
 							<?php
@@ -405,11 +409,11 @@ get_header();
 
 					?>
                     <h3>
-                        <span><?php echo esc_html__( $blog_title['heading'], 'halim' ) ?></span><?php echo esc_html__( $blog_title['sub_heading'], 'halim' ) ?>
+                        <span><?php echo esc_html( $blog_title['heading'] ) ?></span><?php echo esc_html( $blog_title['sub_heading'] ) ?>
                     </h3>
                 </div>
                 <div class="col-md-6">
-                    <p><?php echo esc_html__( $blog_title['description'], 'halim' ) ?></p>
+                    <p><?php echo esc_html( $blog_title['description'] ) ?></p>
                 </div>
             </div>
             <div class="row">
@@ -428,7 +432,9 @@ get_header();
 							<?php the_post_thumbnail(); ?>
                             <div class="post-content">
                                 <div class="post-title">
-                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h4>
+                                    <h4>
+                                        <a href="<?php esc_url( the_permalink() ) ?>"><?php esc_html( the_title() ) ?></a>
+                                    </h4>
                                 </div>
                                 <div class="pots-meta">
                                     <ul>
@@ -443,8 +449,8 @@ get_header();
                                         </li>
                                     </ul>
                                 </div>
-                                <p><?php the_content(); ?></p>
-                                <a href="<?php the_permalink(); ?>"
+                                <p><?php echo wp_kses_post( wp_trim_words( get_the_content(), 30, ' ' ) ) ?></p>
+                                <a href="<?php esc_url( the_permalink() ); ?>"
                                    class="box-btn"><?php echo esc_html__( 'read more', 'halim' ) ?> <i
                                             class="fa fa-angle-double-right"></i></a>
                             </div>

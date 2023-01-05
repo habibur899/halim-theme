@@ -5,12 +5,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-8">
-                    <h2><?php the_title() ?></h2>
+                    <h2><?php esc_html( the_title() ) ?></h2>
 					<?php the_post_thumbnail(); ?>
                     <p><?php the_content(); ?></p>
                     <div class="row">
                         <div class="col-xl-12">
-                            <h4><?php esc_html__( the_field( 'project_gallery_title' ), 'halim' ) ?></h4>
+                            <h4><?php esc_html( the_field( 'project_gallery_title' ) ) ?></h4>
                         </div>
 						<?php
 						$images = get_field( 'project_gallery' );
@@ -28,21 +28,21 @@
                     <br><br>
                     <div class="row">
                         <div class="col-xl-12">
-                            <h4><?php esc_html__( the_field( 'project_overview_title' ), 'halim' ) ?></h4>
+                            <h4><?php esc_html( the_field( 'project_overview_title' ) ) ?></h4>
 							<?php the_field( 'project_video' ); ?>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="portfolio-sidebar">
-                        <h4><?php esc_html__( the_field( 'technology_used_title' ), 'halim' ) ?></h4>
+                        <h4><?php esc_html( the_field( 'technology_used_title' ) ) ?></h4>
                         <ul>
 							<?php
 							$tecns = get_field( 'technology_list' );
 							foreach ( $tecns as $tecno ) {
 								?>
                                 <li>
-                                    <i class="fa fa-arrow-right"></i> <?php echo esc_html__( $tecno['technology'], 'halim' ) ?>
+                                    <i class="fa fa-arrow-right"></i> <?php echo esc_html( $tecno['technology'] ) ?>
                                 </li>
 								<?php
 							}
@@ -50,14 +50,14 @@
                         </ul>
                     </div>
                     <div class="portfolio-sidebar">
-                        <h4><?php esc_html__( the_field( 'project_features_title' ), 'halim' ) ?></h4>
+                        <h4><?php esc_html( the_field( 'project_features_title' ) ) ?></h4>
                         <ul>
 							<?php
 							$features = get_field( 'features_list' );
 							foreach ( $features as $feature ) {
 								?>
                                 <li>
-                                    <i class="fa fa-arrow-right"></i> <?php echo esc_html__( $feature['features'], 'halim' ) ?>
+                                    <i class="fa fa-arrow-right"></i> <?php echo esc_html( $feature['features'] ) ?>
                                 </li>
 							<?php } ?>
                         </ul>

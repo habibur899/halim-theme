@@ -22,8 +22,8 @@ get_header();
                     <div class="col-lg-4 col-md-6">
                         <!-- Single Service -->
                         <div class="single-service">
-                            <i class="<?php the_field( 'icon' ); ?>"></i>
-                            <h4><?php the_title() ?></h4>
+                            <i class="<?php esc_attr( the_field( 'icon' ) ) ?>"></i>
+                            <h4><?php esc_html( the_title() ) ?></h4>
                             <p><?php the_content(); ?></p>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ get_header();
                 <div class="col-md-7">
                     <div class="about">
                         <div class="page-title">
-                            <h4><?php esc_html__( the_field( 'about_title' ), 'halim' ) ?></h4>
+                            <h4><?php esc_html( the_field( 'about_title' ) ) ?></h4>
                         </div>
                         <p><?php the_content(); ?></p>
                     </div>

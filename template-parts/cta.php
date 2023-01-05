@@ -9,14 +9,14 @@
 				$cta_button_text = get_field( 'button_text', 'option' );
 				$cta_link        = get_field( 'link', 'option' );
 				?>
-                <h4><?php echo esc_html__( $cta_title, 'halim' ) ?>
+                <h4><?php echo esc_html( $cta_title ) ?>
 
-                    <span><?php echo esc_html__( $cta_sub_title, 'halim' ) ?></span>
+                    <span><?php echo esc_html( $cta_sub_title ) ?></span>
                 </h4>
             </div>
             <div class="col-md-6 text-center">
                 <a href="<?php echo esc_url( $cta_link ) ?>"
-                   class="box-btn"><?php echo esc_html__( $cta_button_text, 'halim' ) ?><i
+                   class="box-btn"><?php echo esc_html( $cta_button_text ) ?><i
                             class="fa fa-angle-double-right"></i></a>
             </div>
         </div>

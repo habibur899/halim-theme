@@ -39,9 +39,9 @@ get_header();
                         <div class="col-md-5">
                             <div class="google-map">
 								<?php
-								$map = get_field( 'location', 'option' );
+								$map = the_field( 'location', 'option' );
 								if ( $map ) {
-									echo $map;
+									  $map;
 								}
 								?>
                             </div>

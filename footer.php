@@ -36,14 +36,14 @@
 					<?php
 					$footer_contact_title = get_field( 'footer_contact_title', 'option' );
 					?>
-                    <h4><?php echo esc_html__( $footer_contact_title, 'halim' ) ?></h4>
+                    <h4><?php echo esc_html( $footer_contact_title ) ?></h4>
                     <ul>
 						<?php
 						$all_contacts = get_field( 'footer_contact', 'option' );
 						foreach ( $all_contacts as $all_contact ) {
 							?>
                             <li>
-                                <i class="fa <?php echo esc_attr( $all_contact['icon'] ) ?>"></i><?php echo esc_html__( $all_contact['label'], 'halim' ) ?>
+                                <i class="fa <?php echo esc_attr( $all_contact['icon'] ) ?>"></i><?php echo esc_html( $all_contact['label'] ) ?>
                             </li>
 							<?php
 						}
@@ -54,7 +54,7 @@
         </div>
         <div class="row copyright">
             <div class="col-md-6">
-                <p><?php echo esc_html__( get_field( 'copyright', 'option' ), 'halim' ) ?></p>
+                <p><?php echo esc_html( get_field( 'copyright', 'option' ) ) ?></p>
             </div>
             <div class="col-md-6 text-right">
                 <ul>

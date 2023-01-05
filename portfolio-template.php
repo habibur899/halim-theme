@@ -16,7 +16,7 @@ get_header();
 						foreach ( $all_cats as $all_cat ) {
 							?>
                             <button data-filter=".<?php echo esc_attr( $all_cat->slug ) ?>"
-                                    class=""><?php echo esc_html__( $all_cat->name, 'halim' ) ?></button>
+                                    class=""><?php echo esc_html( $all_cat->name ) ?></button>
 							<?php
 
 						}
@@ -40,7 +40,7 @@ get_header();
                     <div class="col-md-4 grid-item <?php
 					$link_cats = get_the_terms( get_the_ID(), 'halim-portfolio-cat' );
 					foreach ( $link_cats as $link_cat ) {
-						echo $link_cat->slug . ' ';
+						echo esc_attr( $link_cat->slug ) . ' ';
 					}
 					?>">
                         <div class="single-portfolio">
@@ -48,8 +48,8 @@ get_header();
                             <div class="portfolio-hover">
                                 <div class="portfolio-content">
                                     <h3><a href="<?php esc_url( the_permalink() ) ?>" class=""><i
-                                                    class="fa fa-link"></i><?php the_title() ?>
-                                            <span><?php the_field( 'designation' ) ?></span></a>
+                                                    class="fa fa-link"></i><?php esc_html( the_title() ) ?>
+                                            <span><?php esc_html( the_field( 'designation' ) ) ?></span></a>
                                     </h3>
                                 </div>
                             </div>
