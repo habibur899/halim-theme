@@ -5,7 +5,7 @@
         {
             "key": "field_63b3e095a3ef5",
             "label": "Background Image",
-            "name": "background_image",
+            "name": "faq_background_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -220,5 +220,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672853889
+    "modified": 1672907409
 }

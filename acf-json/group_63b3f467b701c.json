@@ -81,9 +81,9 @@
             ]
         },
         {
-            "key": "field_63b3f8068a058",
-            "label": "Background Image",
-            "name": "background_image",
+            "key": "field_63b689e2fb49f",
+            "label": "Client Background Image",
+            "name": "client_background_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -124,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672853878
+    "modified": 1672907261
 }
