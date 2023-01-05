@@ -223,4 +223,5 @@ function my_acf_json_save_point( $path ) {
 
 require_once get_template_directory() . "/inc/tgm.php";
 require_once get_template_directory() . "/inc/comment-template-function.php";
+require_once get_template_directory() . "/inc/demo-import.php";
 
